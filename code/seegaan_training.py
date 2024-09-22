@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  1 09:17:57 2023
-
-@author: khasenstab
-"""
-
-
-
-import os
-os.chdir('/data-synology/khasenstab/projects/seegaan_packaged/')
-
-
 #%% Append SEE-GAAN paths
 import os
 import sys
@@ -20,11 +6,6 @@ import sys
 sys.path.append("./code")
 sys.path.append("./code/utils")
 sys.path.append("./code/networks")
-
-
-# Specify GPU Device
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
 #%% Load libraries
@@ -70,7 +51,7 @@ validation_generator = data_generator(os.path.join(DATA_DIR, 'val'), valid_ids, 
 
 #%% samples to monitor training
 samples_z = np.load(os.path.join(LOAD_DIR, "samples/samples_z.npy"))
-samples_noise = np.load(os.path.join(LOAD_DIR, "samples/samples_noise.npy"))
+samples_noise = np.random.normal(size = (13,len(samples_z),256,256,1))
 samples_images = np.load(os.path.join(LOAD_DIR, "samples/samples_images.npy"))
 
 

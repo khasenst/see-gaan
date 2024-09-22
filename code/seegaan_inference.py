@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun  1 09:17:57 2023
-
-@author: khasenstab
-"""
-
-
-
-import os
-os.chdir('/data-synology/khasenstab/projects/seegaan_packaged/')
-
-
 #%% Append SEE-GAAN paths
 import os
 import sys
@@ -20,11 +6,6 @@ import sys
 sys.path.append("./code")
 sys.path.append("./code/utils")
 sys.path.append("./code/networks")
-
-
-# Specify GPU Device
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
 
 
 #%% Load libraries
